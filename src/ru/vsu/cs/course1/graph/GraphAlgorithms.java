@@ -166,6 +166,14 @@ public class GraphAlgorithms {
     public static class MinDistanceSearchResult {
         public double d[];
         public int from[];
+
+        @Override
+        public String toString() {
+            return "MinDistanceSearchResult{" +
+                    "d=" + Arrays.toString(d) +
+                    ", from=" + Arrays.toString(from) +
+                    '}';
+        }
     }
 
     public static MinDistanceSearchResult dijkstra(WeightedGraph graph, int source, int target) {
