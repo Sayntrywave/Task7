@@ -132,12 +132,13 @@ public class GraphUtils {
      * Получение dot-описяния графа (для GraphViz)
      * @return
      */
-    public static String toDot(Graph graph) {
+    public static String toDot(Graph graph, int vertex) {
         StringBuilder sb = new StringBuilder();
         String nl = System.getProperty("line.separator");
         boolean isDigraph = graph instanceof Digraph;
         boolean isWeightedGraph = graph instanceof WeightedGraph;
         sb.append(isDigraph ? "digraph" : "strict graph").append(" {").append(nl);
+        sb.append(vertex).append("[color=red]").append(nl);
         for (int v1 = 0; v1 < graph.vertexCount(); v1++) {
             int count = 0;
             if(!isWeightedGraph) {

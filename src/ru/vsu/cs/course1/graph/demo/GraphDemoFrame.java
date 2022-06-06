@@ -208,8 +208,10 @@ public class GraphDemoFrame extends JFrame {
                 Graph graph = GraphUtils.fromStr(textAreaGraphFile.getText(), clz);
                 GraphDemoFrame.this.graph = graph;
                 /*                System.out.println(Task.getVertex((WeightedGraph) graph));*/
-                textField1.setText(Task.getVertex((WeightedGraph) graph) + "");
-                panelGraphPainter.paint(dotToSvg(GraphUtils.toDot(graph)));
+                int vertex = Task.getVertex((WeightedGraph) graph);
+
+                textField1.setText(vertex + "");
+                panelGraphPainter.paint(dotToSvg(GraphUtils.toDot(graph, vertex)));
 //                panelGraphPainter.paint(dotToSvg(str));
             } catch (Exception exc) {
                 SwingUtils.showErrorMessageBox(exc);
